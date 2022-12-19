@@ -14,7 +14,12 @@ const Thumbnail = ({ name, url, currentPokemon, openPopup }) => {
         callApi()
             .then(response => {
                 setPokemon(response)
-                setImage(response.sprites.front_default)
+                if(response.sprites.other.dream_world.front_default){
+                    setImage(response.sprites.other.dream_world.front_default)
+                }
+                else {
+                    setImage(response.sprites.other['official-artwork'].front_default)
+                }
             })
     }, [url])
 
@@ -23,8 +28,13 @@ const Thumbnail = ({ name, url, currentPokemon, openPopup }) => {
             currentPokemon(pokemon)
             openPopup()
         }}>
-            <p>{name}</p>
-            <img src={image} alt={name} />
+            {/* <p>{name}</p> */}
+            <div className="image">
+                <img src={image} alt={name} />
+                
+            </div>
+            <span className="id">{pokemon.id && `#${pokemon.id}`}</span>
+            <h4>{name}</h4>
         </div>
     )
 }

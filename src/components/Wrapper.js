@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { memo, useEffect, useState } from "react"
 import Thumbnail from "./Thumbnail"
 
 const Wrapper = ({ currentPokemon, openPopup, thumbnails }) => {
@@ -11,4 +11,4 @@ const Wrapper = ({ currentPokemon, openPopup, thumbnails }) => {
     )
 }
 
-export default Wrapper
+export default memo(Wrapper)

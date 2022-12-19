@@ -2,6 +2,7 @@ import './App.css';
 import Wrapper from './components/Wrapper';
 import { useState, useEffect } from 'react';
 import Popup from './components/Popup';
+import pokemonLogo from './International_Pokémon_logo.svg.png'
 
 function App() {
 
@@ -40,11 +41,13 @@ function App() {
 
   return (
     <>
-      {showPop ? <Popup closePopup={closePopup} pokemon={pokemon} /> : <Wrapper thumbnails={thumbnails} currentPokemon={currentPokemon} openPopup={openPopup} />}
-      {!showPop && <div className="nav-buttons">
-            <button onClick={() => setUrl(data.previous)}>prev</button>
-            <button onClick={() => setUrl(data.next)}>next</button>
-        </div>}
+      <div className='header' ><img src={pokemonLogo} /></div>
+      <Wrapper thumbnails={thumbnails} currentPokemon={currentPokemon} openPopup={openPopup} />
+      {showPop && <div className='pop-container'><Popup closePopup={closePopup} pokemon={pokemon} /></div>}
+      <div className="nav-buttons">
+        <button disabled={!data.previous} onClick={() => setUrl(data.previous)}>prev</button>
+        <button disabled={!data.next} onClick={() => setUrl(data.next)}>next</button>
+      </div>
     </>
   );
 }

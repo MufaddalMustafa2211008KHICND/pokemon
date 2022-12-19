@@ -1,34 +1,97 @@
-body {
+#root {
   position: relative;
+}
+
+.header {
+  margin: 20px 15vw;
+  text-align: center;
+}
+.header img {
+  width: 300px;
+  height: auto;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
-  margin: 100px 500px;
+  margin: 0 15vw;
+  border: 1px solid;
+  justify-content: center;
 }
 
 .thumbnail {
   border: 3px solid rgb(25, 163, 117);
-  flex: 1 0 calc(16% - 10px);
-  margin: 20px;
-  /* width: 200px; */
+  border-radius: 20px;
+  padding: 5px;
+  /* flex: 1 0 calc(16% - 10px); */
+  margin: 15px;
 }
 
-.thumbnail img {
+.thumbnail:hover {
+  background-color: rgb(75, 196, 155);
+}
+
+.thumbnail h4 {
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.image img {
   width: 100%;
+  height: 100%;
+}
+
+.id {
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(255, 152, 62);
+}
+
+.pop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.274);
+  display: flex;
 }
 
 .popup {
   background-color: bisque;
+  margin: auto;
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 70vh;
 }
 
 .nav-buttons {
-  margin: 50px;
+  margin: 10vh 15vw;
+  /* margin: 50px; */
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .nav-buttons button {
-  font-size: 2rem;
+  border: 3px solid rgb(233, 180, 47);
+  border-radius: 10px;
+  background-color: rgb(241, 232, 180);
+  padding: 0.25em 0.75em;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.nav-buttons button:hover {
+  background-color: rgb(243, 216, 66);
+}
+
+.nav-buttons button:disabled {
+  background-color: rgb(241, 232, 180);
 }
