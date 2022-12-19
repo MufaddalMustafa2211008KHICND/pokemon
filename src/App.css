@@ -17,6 +17,7 @@
   margin: 0 15vw;
   border: 1px solid;
   justify-content: center;
+  background-color: rgb(255, 255, 168);
 }
 
 .thumbnail {
@@ -25,6 +26,8 @@
   padding: 5px;
   /* flex: 1 0 calc(16% - 10px); */
   margin: 15px;
+  background-color: white;
+  cursor: pointer;
 }
 
 .thumbnail:hover {
@@ -60,7 +63,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.274);
+  background-color: rgba(0, 0, 0, 0.671);
   display: flex;
 }
 
@@ -70,6 +73,49 @@
   overflow: auto;
   overflow-x: hidden;
   max-height: 70vh;
+  position: relative;
+  border-radius: 20px;
+  border: 4px solid rgb(160, 41, 41);
+}
+
+.popup-title {
+  text-align: center;
+}
+
+.popup-image {
+  height: 300px;
+  width: 300px;
+}
+
+.popup-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.popup-specs {
+  border: 1px solid;
+}
+
+.popup-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgb(216, 102, 102);
+  color: rgb(211, 0, 0);
+  font-weight: bold;
+  font-size: 16px;
+  border: 2px solid rgb(211, 0, 0);
+  border-radius: 50%;
+  /* text-align: center; */
+  height: 1.5em;
+  width: 1.5em;
+  margin: 5px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.make-flex {
+  display: flex;
 }
 
 .nav-buttons {
@@ -86,6 +132,7 @@
   padding: 0.25em 0.75em;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .nav-buttons button:hover {
