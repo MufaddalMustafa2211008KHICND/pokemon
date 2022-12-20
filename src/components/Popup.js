@@ -6,23 +6,22 @@ const Popup = ({ pokemon, closePopup }) => {
                 <img src={pokemon.sprites.other['official-artwork'].front_default} alt={pokemon.name} />
             </div>
             <div className="popup-specs">
-                <h4>Characteristics</h4>
                 <p>Weight: {pokemon.weight / 10} kgs</p>
                 <p>Height: {pokemon.height / 10} meters</p>
             </div>
-            <div className="popup-abilities">
-                <h4>Abilities</h4>
+            <div className="popup-types">
+                <h4 className="specs-title" >{pokemon.types.length === 1 ? 'Type':'Types'}:</h4>
                 <div className="make-flex">
-                    {pokemon.abilities.map((item) => {
-                        return <p>{item.ability.name}</p>
+                    {pokemon.types.map((item) => {
+                        return <p>{item.type.name}</p>
                     })}
                 </div>
             </div>
             <div className="popup-abilities">
-                <h4>Types</h4>
+                <h4 className="specs-title" >{pokemon.abilities.length === 1 ? 'Ability':'Abilities'}:</h4>
                 <div className="make-flex">
-                    {pokemon.types.map((item) => {
-                        return <p>{item.type.name}</p>
+                    {pokemon.abilities.map((item) => {
+                        return <p>{item.ability.name}</p>
                     })}
                 </div>
             </div>
