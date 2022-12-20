@@ -5,7 +5,7 @@ const Wrapper = ({ currentPokemon, openPopup, thumbnails }) => {
     return (
         <>
         <div className="wrapper">
-            {thumbnails.map((item) => <Thumbnail currentPokemon={currentPokemon} openPopup={openPopup} name={item.name} url={item.url} />)}
+            {thumbnails.map((item) => <Thumbnail key={item.name} currentPokemon={currentPokemon} openPopup={openPopup} name={item.name} url={item.url} />)}
         </div>
         </>
     )
